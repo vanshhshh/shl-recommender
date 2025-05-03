@@ -1,0 +1,97 @@
+/* Additional styling beyond Bootstrap defaults */
+
+/* Ensure the page takes at least the full viewport height */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Custom styling for recommendation cards */
+.recommendation-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the similarity score indicator */
+.similarity-indicator {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Custom card height for recommendations list */
+#recommendationsContainer {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Badge styling for assessment types */
+.badge-cognitive {
+    background-color: var(--bs-purple);
+}
+
+.badge-technical {
+    background-color: var(--bs-blue);
+}
+
+.badge-behavioral {
+    background-color: var(--bs-teal);
+}
+
+.badge-professional {
+    background-color: var(--bs-orange);
+}
+
+/* Styling for skill tags */
+.skill-tag {
+    display: inline-block;
+    background-color: var(--bs-gray-700);
+    color: var(--bs-light);
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Modal footer styling */
+.modal-footer {
+    justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .similarity-indicator {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+.card {
+    height: 100%;
+}

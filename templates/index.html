@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHL Assessment Recommendation Engine</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="/" class="d-flex align-items-center text-decoration-none">
+                <i class="fas fa-brain me-2 fs-4"></i>
+                <span class="fs-4">SHL Assessment Recommendation Engine</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row g-4">
+            <!-- Left Column: Input Form -->
+            <div class="col-md-5">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-file-alt me-2"></i>Job Description
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="jobDescriptionForm">
+                            <div class="mb-3">
+                                <label for="jobDescription" class="form-label">Enter or paste job description</label>
+                                <textarea class="form-control" id="jobDescription" rows="12" placeholder="Paste the job description here..."></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6>Filter Options</h6>
+                                <div class="border rounded p-3">
+                                    <div class="mb-3">
+                                        <label for="testType" class="form-label">Test Type</label>
+                                        <select class="form-select" id="testType">
+                                            <option value="">All Types</option>
+                                            {% for type in assessment_types %}
+                                            <option value="{{ type }}">{{ type }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="remoteAvailable">
+                                        <label class="form-check-label" for="remoteAvailable">Remote Available Only</label>
+                                    </div>
+                                    
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="adaptiveTesting">
+                                        <label class="form-check-label" for="adaptiveTesting">Adaptive Testing Only</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-search me-2"></i>Find Matching Assessments
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Results -->
+            <div class="col-md-7">
+                <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="fas fa-clipboard-list me-2"></i>Recommended Assessments
+                        </h5>
+                        <span id="resultCount" class="badge bg-primary">0 results</span>
+                    </div>
+                    <div class="card-body">
+                        <div id="loadingIndicator" class="text-center py-5 d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Analyzing job description...</p>
+                        </div>
+                        
+                        <div id="noResultsMessage" class="text-center py-5">
+                            <i class="fas fa-info-circle fs-1 text-muted mb-3"></i>
+                            <p class="lead">No results to display yet.</p>
+                            <p>Enter a job description and click "Find Matching Assessments" to get started.</p>
+                        </div>
+                        
+                        <div id="recommendationsContainer" class="d-none">
+                            <div class="list-group" id="recommendationsList">
+                                <!-- Recommendations will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-body-tertiary border-top">
+        <div class="container text-center">
+            <span class="text-muted">SHL Assessment Recommendation Engine &copy; 2023</span>
+        </div>
+    </footer>
+    
+    <!-- Assessment Detail Modal -->
+    <div class="modal fade" id="assessmentDetailModal" tabindex="-1" aria-labelledby="assessmentDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assessmentDetailModalLabel">Assessment Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="assessmentModalBody">
+                    <!-- Detail content will be inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn btn-primary" id="assessmentLink" target="_blank">Visit Assessment Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

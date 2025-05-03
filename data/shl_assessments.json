@@ -1,0 +1,222 @@
+[
+  {
+    "id": "SHL-001",
+    "name": "Verbal Reasoning Assessment",
+    "description": "Measures the ability to understand and evaluate written information. Suitable for professionals who need to make decisions based on verbal/written information.",
+    "type": "Cognitive",
+    "duration": "25 minutes",
+    "skills": "Critical thinking, language comprehension, analytical reasoning, information evaluation",
+    "link": "https://www.shl.com/assessments/verbal-reasoning/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-002",
+    "name": "Numerical Reasoning Assessment",
+    "description": "Evaluates the ability to interpret numerical data and make logical decisions. Designed for roles involving financial analysis, data interpretation, and quantitative decision-making.",
+    "type": "Cognitive",
+    "duration": "35 minutes",
+    "skills": "Numerical ability, data interpretation, statistical analysis, problem-solving",
+    "link": "https://www.shl.com/assessments/numerical-reasoning/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-003",
+    "name": "Inductive Reasoning Assessment",
+    "description": "Assesses logical thinking and pattern recognition ability. Ideal for roles requiring innovation, strategic thinking, and problem-solving.",
+    "type": "Cognitive",
+    "duration": "30 minutes",
+    "skills": "Pattern recognition, logical thinking, problem-solving, abstract reasoning",
+    "link": "https://www.shl.com/assessments/inductive-reasoning/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-004",
+    "name": "Mechanical Reasoning Assessment",
+    "description": "Measures understanding of mechanical and physical principles. Targeted at engineering, technical, and maintenance roles.",
+    "type": "Technical",
+    "duration": "20 minutes",
+    "skills": "Mechanical aptitude, spatial visualization, applied physics, technical problem-solving",
+    "link": "https://www.shl.com/assessments/mechanical-reasoning/",
+    "remote_available": false,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-005",
+    "name": "Coding Assessment for Python",
+    "description": "Evaluates programming skills and problem-solving in Python. Designed for software developers, data scientists, and automation engineers.",
+    "type": "Technical",
+    "duration": "60 minutes",
+    "skills": "Python programming, algorithms, data structures, debugging, code efficiency",
+    "link": "https://www.shl.com/assessments/coding-python/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-006",
+    "name": "Leadership Competency Assessment",
+    "description": "Evaluates leadership potential and management capabilities. Suitable for management roles and leadership development programs.",
+    "type": "Behavioral",
+    "duration": "45 minutes",
+    "skills": "Leadership, decision-making, team management, strategic thinking, conflict resolution",
+    "link": "https://www.shl.com/assessments/leadership-competency/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-007",
+    "name": "Customer Service Assessment",
+    "description": "Assesses aptitude for customer-facing roles and service orientation. Ideal for support staff, account managers, and service representatives.",
+    "type": "Behavioral",
+    "duration": "30 minutes",
+    "skills": "Communication, empathy, problem resolution, patience, interpersonal skills",
+    "link": "https://www.shl.com/assessments/customer-service/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-008",
+    "name": "Excel Skills Assessment",
+    "description": "Measures proficiency in Microsoft Excel for data analysis and reporting. Suitable for analysts, financial professionals, and administrative roles.",
+    "type": "Technical",
+    "duration": "40 minutes",
+    "skills": "Excel, data analysis, formula creation, pivot tables, data visualization",
+    "link": "https://www.shl.com/assessments/excel-skills/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-009",
+    "name": "Personality Assessment",
+    "description": "Measures work-related personality traits and behavioral tendencies. Used for cultural fit evaluation and team composition analysis.",
+    "type": "Behavioral",
+    "duration": "25 minutes",
+    "skills": "Self-awareness, workplace behavior, interpersonal style, motivation, stress management",
+    "link": "https://www.shl.com/assessments/personality-profile/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-010",
+    "name": "Situational Judgement Test",
+    "description": "Evaluates decision-making in realistic workplace scenarios. Appropriate for customer service, management, and team-based roles.",
+    "type": "Behavioral",
+    "duration": "30 minutes",
+    "skills": "Decision-making, workplace judgment, conflict resolution, prioritization",
+    "link": "https://www.shl.com/assessments/situational-judgement/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-011",
+    "name": "Data Science Assessment",
+    "description": "Comprehensive evaluation of data science skills including statistics, machine learning, and data visualization. For data scientists and ML engineers.",
+    "type": "Technical",
+    "duration": "75 minutes",
+    "skills": "Statistical analysis, machine learning, Python, R, data visualization, feature engineering",
+    "link": "https://www.shl.com/assessments/data-science/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-012",
+    "name": "Project Management Assessment",
+    "description": "Evaluates project management capabilities including planning, execution, and stakeholder management. Designed for project managers and coordinators.",
+    "type": "Professional",
+    "duration": "45 minutes",
+    "skills": "Project planning, risk management, team coordination, stakeholder communication, resource allocation",
+    "link": "https://www.shl.com/assessments/project-management/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-013",
+    "name": "Sales Aptitude Assessment",
+    "description": "Measures sales potential and capabilities. Applicable for sales representatives, account managers, and business development roles.",
+    "type": "Behavioral",
+    "duration": "35 minutes",
+    "skills": "Persuasion, relationship building, negotiation, resilience, client needs assessment",
+    "link": "https://www.shl.com/assessments/sales-aptitude/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-014",
+    "name": "DevOps Practices Assessment",
+    "description": "Assesses knowledge and skills in DevOps methodologies and tools. For DevOps engineers and IT operations specialists.",
+    "type": "Technical",
+    "duration": "55 minutes",
+    "skills": "CI/CD, containerization, infrastructure as code, monitoring, automation scripting",
+    "link": "https://www.shl.com/assessments/devops-practices/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-015",
+    "name": "Front-End Development Assessment",
+    "description": "Evaluates skills in front-end web development including HTML, CSS, and JavaScript. For UI developers and web designers.",
+    "type": "Technical",
+    "duration": "50 minutes",
+    "skills": "HTML5, CSS3, JavaScript, responsive design, front-end frameworks, web accessibility",
+    "link": "https://www.shl.com/assessments/frontend-development/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-016",
+    "name": "General Cognitive Ability Test",
+    "description": "Comprehensive assessment of cognitive abilities including verbal, numerical, and abstract reasoning. Suitable for graduate recruitment and high-potential identification.",
+    "type": "Cognitive",
+    "duration": "60 minutes",
+    "skills": "Problem-solving, critical thinking, information processing, learning agility",
+    "link": "https://www.shl.com/assessments/general-cognitive/",
+    "remote_available": true,
+    "adaptive_testing": true
+  },
+  {
+    "id": "SHL-017",
+    "name": "Digital Marketing Assessment",
+    "description": "Evaluates knowledge and skills in digital marketing strategies and platforms. For marketing specialists and digital campaign managers.",
+    "type": "Professional",
+    "duration": "40 minutes",
+    "skills": "SEO, SEM, social media marketing, content strategy, analytics interpretation, campaign planning",
+    "link": "https://www.shl.com/assessments/digital-marketing/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-018",
+    "name": "Accounting Principles Assessment",
+    "description": "Measures knowledge of accounting principles and financial reporting. For accounting professionals and financial analysts.",
+    "type": "Professional",
+    "duration": "45 minutes",
+    "skills": "Financial accounting, bookkeeping, GAAP knowledge, financial reporting, auditing principles",
+    "link": "https://www.shl.com/assessments/accounting-principles/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-019",
+    "name": "Business Analyst Assessment",
+    "description": "Evaluates skills needed for business analysis including requirements gathering and process mapping. For business analysts and systems analysts.",
+    "type": "Professional",
+    "duration": "50 minutes",
+    "skills": "Requirements analysis, process modeling, stakeholder management, solution design, user story creation",
+    "link": "https://www.shl.com/assessments/business-analyst/",
+    "remote_available": true,
+    "adaptive_testing": false
+  },
+  {
+    "id": "SHL-020",
+    "name": "UX Design Assessment",
+    "description": "Assesses user experience design capabilities including user research and interface design. For UX/UI designers and product designers.",
+    "type": "Technical",
+    "duration": "55 minutes",
+    "skills": "User research, wireframing, prototyping, usability testing, information architecture",
+    "link": "https://www.shl.com/assessments/ux-design/",
+    "remote_available": true,
+    "adaptive_testing": true
+  }
+]
