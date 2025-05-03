@@ -163,9 +163,10 @@ class NLPProcessor:
                 'ai_ml': ['machine learning', 'artificial intelligence', 'ai', 'ml', 'deep learning', 'neural network', 'nlp', 'natural language processing', 'computer vision', 'data science', 'tensorflow', 'pytorch', 'scikit-learn', 'keras', 'regression', 'classification', 'clustering'],
                 'sales': ['sales', 'marketing', 'customer', 'account', 'business development', 'client', 'revenue', 'lead', 'pipeline', 'crm', 'salesforce', 'hubspot', 'closing', 'negotiation', 'pitch', 'presentation', 'relationship', 'solution selling', 'b2b', 'b2c', 'retail'],
                 'management': ['manager', 'management', 'lead', 'leadership', 'supervisor', 'director', 'executive', 'ceo', 'cto', 'coo', 'cfo', 'vp', 'head', 'chief', 'project manager', 'program manager', 'scrum master', 'agile', 'team lead'],
-                'finance': ['accounting', 'finance', 'financial', 'investment', 'banking', 'trading', 'audit', 'tax', 'budget', 'forecast', 'analysis', 'capital', 'risk', 'compliance', 'regulation', 'portfolio'],
+                'finance': ['accounting', 'finance', 'financial', 'investment', 'banking', 'trading', 'audit', 'tax', 'budget', 'forecast', 'analysis', 'capital', 'risk', 'compliance', 'regulation', 'portfolio', 'bank', 'banker', 'loan', 'credit', 'debit', 'transaction', 'deposit', 'withdrawal', 'interest', 'mortgage', 'payment'],
                 'hr': ['hr', 'human resources', 'talent', 'recruitment', 'recruiting', 'hiring', 'onboarding', 'training', 'development', 'performance', 'compensation', 'benefits', 'employee', 'workforce', 'culture', 'diversity', 'inclusion'],
-                'design': ['design', 'ux', 'ui', 'user experience', 'user interface', 'graphic', 'visual', 'creative', 'art', 'illustrator', 'photoshop', 'sketch', 'figma', 'adobe', 'wireframe', 'prototype', 'accessibility']
+                'design': ['design', 'ux', 'ui', 'user experience', 'user interface', 'graphic', 'visual', 'creative', 'art', 'illustrator', 'photoshop', 'sketch', 'figma', 'adobe', 'wireframe', 'prototype', 'accessibility'],
+                'administrative': ['administrative', 'admin', 'assistant', 'clerk', 'receptionist', 'secretary', 'office', 'document', 'filing', 'paperwork', 'correspondence', 'data entry', 'typing', 'word processing', 'spreadsheet', 'scheduling', 'calendar', 'meeting', 'minute taking', 'phone', 'email', 'customer service', 'support', 'clerical', 'organization']
             }
             
             # Create a flattened set of all keywords for basic matching
@@ -228,7 +229,11 @@ class NLPProcessor:
                     'ux designer': ['ux design', 'user experience'],
                     'database administrator': ['database', 'sql'],
                     'front end developer': ['front-end', 'html', 'css', 'javascript'],
-                    'mobile developer': ['mobile', 'ios', 'android', 'react native', 'flutter']
+                    'mobile developer': ['mobile', 'ios', 'android', 'react native', 'flutter'],
+                    'bank assistant': ['administrative', 'customer service', 'bank', 'excel', 'numerical', 'verbal', 'clerical'],
+                    'administrative assistant': ['administrative', 'office', 'clerical', 'customer service', 'excel', 'verbal'],
+                    'bank clerk': ['bank', 'administrative', 'numerical', 'clerical', 'excel', 'data entry'],
+                    'icici bank': ['bank', 'financial', 'administrative', 'customer service', 'excel', 'numerical']
                 }
                 
                 for role, match_terms in key_exact_matches.items():
@@ -236,6 +241,15 @@ class NLPProcessor:
                         for term in match_terms:
                             if term in assessment_text:
                                 boost += 0.5  # Very strong boost for direct role-specific matches
+                
+                # Apply domain-specific penalties
+                # For banking and administrative roles, penalize programming assessments
+                if ('bank' in job_description_lower or 'administrative' in job_description_lower or 
+                    'admin' in job_description_lower or 'assistant' in job_description_lower or
+                    'clerk' in job_description_lower):
+                    if ('python' in name or 'java' in name or 'coding' in name or 
+                        'programming' in name or 'developer' in name):
+                        boost -= 2.0  # Strong penalty for programming assessments
                 
                 # Apply the boost
                 similarities[i] = (idx, score + boost)
