@@ -76,10 +76,41 @@ class NLPProcessor:
             
             # Create list of (index, score) tuples and sort by score (descending)
             similarities = [(i, float(score)) for i, score in enumerate(similarity_scores)]
+            
+            # Extract key terms from job description for boosting
+            job_terms = set(job_description.lower().split())
+            skill_boosts = {}
+            
+            # Boost assessments that match key skills or terms in the job description
+            for i, (idx, score) in enumerate(similarities):
+                assessment = self.assessments[idx]
+                boost = 0
+                
+                # Boost score based on skill matches
+                skills = assessment.get('skills', '').lower()
+                name = assessment.get('name', '').lower()
+                
+                # Check for key term matches in the assessment name and skills
+                term_matches = sum(1 for term in job_terms if term in name or term in skills)
+                boost += term_matches * 0.05  # Small boost per term match
+                
+                # Additional boost for specific job roles/skills if they appear in assessment
+                key_terms = ['java', 'python', 'sales', 'developer', 'engineer', 'leadership', 
+                           'management', 'analysis', 'customer', 'technical']
+                for term in key_terms:
+                    if term in job_description.lower() and (term in name or term in skills):
+                        boost += 0.2  # Strong boost for matching key terms
+                
+                # Apply the boost
+                similarities[i] = (idx, score + boost)
+            
+            # Sort by adjusted scores
             similarities.sort(key=lambda x: x[1], reverse=True)
             
             # Filter and prepare results
             recommendations = []
+            max_score = max([score for _, score in similarities]) if similarities else 1
+            
             for i, similarity in similarities:
                 assessment = self.assessments[i]
                 
@@ -91,14 +122,24 @@ class NLPProcessor:
                 if adaptive_testing is not None and assessment.get('adaptive_testing') != adaptive_testing:
                     continue
                 
-                # Add similarity score to assessment
+                # Add similarity score to assessment (normalize to 0-1 range)
                 assessment_copy = assessment.copy()
-                assessment_copy['similarity_score'] = float(similarity)
+                normalized_score = float(similarity) / max_score if max_score > 0 else 0
+                assessment_copy['similarity_score'] = normalized_score
+                assessment_copy['similarity'] = normalized_score  # For v1/recommend endpoint
                 recommendations.append(assessment_copy)
                 
                 # Break when we have enough recommendations
                 if len(recommendations) >= top_k:
                     break
+            
+            # Ensure at least one recommendation if available
+            if not recommendations and self.assessments:
+                # If no matches found but we have assessments, return the first one
+                assessment_copy = self.assessments[0].copy()
+                assessment_copy['similarity_score'] = 0.0
+                assessment_copy['similarity'] = 0.0
+                recommendations.append(assessment_copy)
             
             self.logger.info(f"Found {len(recommendations)} recommendations for job description")
             return recommendations
