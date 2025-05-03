@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "query": "I am hiring for Java developers who\ncan also collaborate effectively with\nmy business teams. Looking for an\nassessment(s) that can be\ncompleted in 40 minutes.\nAutomata - Fix (New) | SHL https://www.shl.com/solutions/products/productcatalog/view/automata-fix-new/\nCore Java (Entry Level) (New)\n| SHL https://www.shl.com/solutions/products/productcatalog/view/core-java-entry-level-new/\nJava 8 (New) | SHL https://www.shl.com/solutions/products/productcatalog/view/java-8-new/\nCore Java (Advanced Level)\n(New) | SHL https://www.shl.com/solutions/products/productcatalog/view/core-java-advanced-level-new/\nAgile Software Development\n| SHL https://www.shl.com/solutions/products/productcatalog/view/agile-software-development/\nTechnology Professional 8.0\nJob Focused Assessment |\nSHL https://www.shl.com/solutions/products/productcatalog/view/technology-professional-8-0-jobfocused-assessment/\nComputer Science (New) |\nSHL https://www.shl.com/solutions/products/productcatalog/view/computer-science-new/",
+    "expected_assessments": [
+      {
+        "name": "(International)",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-7-1/"
+      },
+      {
+        "name": "",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-sift-out-7-1/"
+      },
+      {
+        "name": "",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-representative-solution/"
+      },
+      {
+        "name": "Solution",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-support-specialist-solution/"
+      },
+      {
+        "name": "Solution",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/technical-sales-associate-solution/"
+      },
+      {
+        "name": "Accent) (New)",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/svar-spoken-english-indian-accentnew/"
+      },
+      {
+        "name": "Solution",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-solution/"
+      },
+      {
+        "name": "Simulation",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-simulation/"
+      },
+      {
+        "name": "(New)",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/english-comprehension-new/"
+      }
+    ]
+  }
+]

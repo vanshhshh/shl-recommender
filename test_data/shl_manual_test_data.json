@@ -1,0 +1,29 @@
+[
+  {
+    "query": "I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes.",
+    "expected_assessments": [
+      {"name": "Automata - Fix (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/automata-fix-new/"},
+      {"name": "Core Java (Entry Level) (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/core-java-entry-level-new/"},
+      {"name": "Java 8 (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/java-8-new/"},
+      {"name": "Core Java (Advanced Level) (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/core-java-advanced-level-new/"},
+      {"name": "Agile Software Development", "url": "https://www.shl.com/solutions/products/productcatalog/view/agile-software-development/"},
+      {"name": "Technology Professional 8.0 Job Focused Assessment", "url": "https://www.shl.com/solutions/products/productcatalog/view/technology-professional-8-0-jobfocused-assessment/"},
+      {"name": "Computer Science (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/computer-science-new/"}
+    ]
+  },
+  {
+    "query": "I want to hire new graduates for a sales role in my company, the budget is for about an hour for each test. Give me some options",
+    "expected_assessments": [
+      {"name": "Entry level Sales 7.1 (International)", "url": "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-7-1/"},
+      {"name": "Entry Level Sales Sift Out 7.1", "url": "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-sift-out-7-1/"},
+      {"name": "Entry Level Sales Solution", "url": "https://www.shl.com/solutions/products/productcatalog/view/entry-level-sales-solution/"},
+      {"name": "Sales Representative Solution", "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-representative-solution/"},
+      {"name": "Sales Support Specialist Solution", "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-support-specialist-solution/"},
+      {"name": "Technical Sales Associate Solution", "url": "https://www.shl.com/solutions/products/productcatalog/view/technical-sales-associate-solution/"},
+      {"name": "SVAR - Spoken English (Indian Accent) (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/svar-spoken-english-indian-accentnew/"},
+      {"name": "Sales & Service Phone Solution", "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-solution/"},
+      {"name": "Sales & Service Phone Simulation", "url": "https://www.shl.com/solutions/products/productcatalog/view/sales-and-service-phone-simulation/"},
+      {"name": "English Comprehension (New)", "url": "https://www.shl.com/solutions/products/productcatalog/view/english-comprehension-new/"}
+    ]
+  }
+]

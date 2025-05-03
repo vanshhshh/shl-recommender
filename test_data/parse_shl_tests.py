@@ -82,12 +82,7 @@ def parse_test_data(file_path):
                 'expected_assessments': expected_assessments
             })
     
-    # Add the last query if there is one
-    if current_query is not None:
-        test_cases.append({
-            'query': current_query,
-            'expected_assessments': expected_assessments
-        })
+    # No need to add the last query here since we're doing it per block
     
     return test_cases
 
