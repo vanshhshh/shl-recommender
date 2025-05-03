@@ -12,6 +12,7 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "scikit-learn>=1.6.1",
     "scipy>=1.15.2",
+    "trafilatura>=2.0.0",
 ]
 
 [[tool.uv.index]]

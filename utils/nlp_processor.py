@@ -230,10 +230,29 @@ class NLPProcessor:
                     'database administrator': ['database', 'sql'],
                     'front end developer': ['front-end', 'html', 'css', 'javascript'],
                     'mobile developer': ['mobile', 'ios', 'android', 'react native', 'flutter'],
-                    'bank assistant': ['administrative', 'customer service', 'bank', 'excel', 'numerical', 'verbal', 'clerical'],
-                    'administrative assistant': ['administrative', 'office', 'clerical', 'customer service', 'excel', 'verbal'],
-                    'bank clerk': ['bank', 'administrative', 'numerical', 'clerical', 'excel', 'data entry'],
-                    'icici bank': ['bank', 'financial', 'administrative', 'customer service', 'excel', 'numerical']
+                    
+                    # Banking and administrative role matches
+                    'bank assistant': ['banking operations', 'administrative assistant', 'clerical ability', 'excel skills', 'attention to detail', 'data entry'],
+                    'administrative assistant': ['administrative assistant skills', 'clerical ability', 'office management', 'word processing', 'business correspondence'],
+                    'bank clerk': ['banking operations', 'clerical ability', 'attention to detail', 'financial literacy', 'data entry'],
+                    'bank teller': ['bank teller assessment', 'banking operations', 'cash handling', 'attention to detail'],
+                    'icici bank': ['banking operations', 'financial services aptitude', 'excel skills', 'administrative assistant', 'ethics and compliance'],
+                    
+                    # Additional banking role matches
+                    'bank administrative': ['banking operations', 'administrative assistant skills', 'clerical ability', 'basic computer skills'],
+                    'financial services': ['financial services aptitude', 'banking operations', 'accounting principles', 'financial literacy'],
+                    'customer service representative': ['customer service assessment', 'call center assessment', 'communication skills'],
+                    'admin': ['administrative assistant skills', 'clerical ability', 'attention to detail', 'filing and records management'],
+                    'assistant': ['administrative assistant skills', 'administrative multitasking', 'word processing', 'basic computer skills'],
+                    'bank operations': ['banking operations', 'financial services aptitude', 'ethics and compliance'],
+                    
+                    # Leadership and management roles
+                    'manager': ['leadership competency', 'project management', 'situational judgement', 'personality assessment'],
+                    'team lead': ['leadership competency', 'situational judgement', 'personality assessment'],
+                    'lead': ['leadership competency', 'project management', 'situational judgement'],
+                    'sales manager': ['sales aptitude', 'leadership competency', 'project management'],
+                    'sales lead': ['sales aptitude', 'leadership competency', 'situational judgement'],
+                    'management': ['leadership competency', 'project management', 'situational judgement']
                 }
                 
                 for role, match_terms in key_exact_matches.items():
