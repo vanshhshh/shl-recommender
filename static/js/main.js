@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Duration and other details
             const details = document.createElement('div');
             details.className = 'text-muted mb-2';
-            details.innerHTML = `<i class="far fa-clock me-1"></i>${assessment.duration}`;
+            details.innerHTML = `<i class="far fa-clock me-1"></i>${assessment.duration_minutes} minutes`;
             
             // Add remote and adaptive badges if applicable
             if (assessment.remote_available) {
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Duration
-                            <span>${assessment.duration}</span>
+                            <span>${assessment.duration_minutes} minutes</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Remote Available
@@ -298,8 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Add example job description (for demo purposes)
-    document.getElementById('jobDescription').value = `Data Scientist
+    // Example job descriptions for different roles
+    const examples = {
+        datascientist: `Data Scientist
 
 Job Description:
 We are looking for a Data Scientist to join our growing analytics team. The ideal candidate will have strong statistical analysis skills, experience with machine learning algorithms, and proficiency in Python and R. This role involves analyzing large datasets, developing predictive models, and creating data visualizations to communicate insights to stakeholders.
@@ -317,5 +318,77 @@ Requirements:
 - Proficiency in Python and/or R
 - Experience with SQL and database systems
 - Knowledge of machine learning techniques and statistical analysis
-- Excellent communication and presentation skills`;
+- Excellent communication and presentation skills`,
+
+        bankassistant: `Bank Administrative Assistant
+
+Job Description:
+ICICI Bank is seeking an Administrative Assistant for our branch operations team. This role will support branch managers and banking staff with administrative tasks, customer service coordination, and document processing. The ideal candidate is detail-oriented, organized, and possesses excellent communication skills.
+
+Responsibilities:
+- Process banking forms and documents according to established procedures
+- Coordinate schedules, appointments, and meetings for branch management
+- Provide basic customer service support and direct customers to appropriate departments
+- Assist with data entry and maintenance of banking records
+- Handle correspondence and maintain filing systems
+- Prepare reports and presentations for branch leadership
+
+Requirements:
+- High school diploma required, Associate's degree preferred
+- 0-2 years of experience in administrative or clerical roles
+- Proficiency in Microsoft Office Suite (Excel, Word, Outlook)
+- Strong attention to detail and organizational skills
+- Excellent verbal and written communication abilities
+- Customer service orientation with a professional demeanor`,
+
+        salesmanager: `Sales Manager - Regional Team
+
+Job Description:
+We are seeking an experienced Sales Manager to lead our regional sales team and drive revenue growth. The ideal candidate will have a proven track record of sales leadership, team development, and client relationship management. This role will be responsible for setting sales targets, coaching representatives, and implementing sales strategies.
+
+Responsibilities:
+- Lead and develop a team of 10-15 sales representatives
+- Build and maintain strategic relationships with key clients
+- Establish sales targets and develop strategies to achieve them
+- Analyze sales data and market trends to optimize sales performance
+- Provide regular coaching and performance feedback to team members
+- Collaborate with marketing and product teams to refine sales approach
+
+Requirements:
+- Bachelor's degree in Business, Marketing, or related field
+- 5+ years in sales with at least 2 years in a management role
+- Proven track record of exceeding sales targets
+- Strong leadership, coaching, and team development skills
+- Excellent negotiation and client relationship management abilities
+- Experience with CRM systems and sales analytics tools`
+    };
+    
+    // Set default example to data scientist
+    document.getElementById('jobDescription').value = examples.datascientist;
+    
+    // Add example selector buttons
+    const exampleButtonsContainer = document.createElement('div');
+    exampleButtonsContainer.className = 'mb-3 d-flex gap-2';
+    exampleButtonsContainer.innerHTML = `
+        <small class="text-muted me-2">Try example:</small>
+        <button class="btn btn-sm btn-outline-secondary active" data-example="datascientist">Data Scientist</button>
+        <button class="btn btn-sm btn-outline-secondary" data-example="bankassistant">Bank Assistant</button>
+        <button class="btn btn-sm btn-outline-secondary" data-example="salesmanager">Sales Manager</button>
+    `;
+    
+    // Insert before the form
+    form.insertBefore(exampleButtonsContainer, form.firstChild);
+    
+    // Add event listeners to example buttons
+    exampleButtonsContainer.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Set active class
+            exampleButtonsContainer.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Set example text
+            const exampleKey = event.target.dataset.example;
+            document.getElementById('jobDescription').value = examples[exampleKey];
+        });
+    });
 });
