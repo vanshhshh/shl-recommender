@@ -166,7 +166,14 @@ class NLPProcessor:
                 'finance': ['accounting', 'finance', 'financial', 'investment', 'banking', 'trading', 'audit', 'tax', 'budget', 'forecast', 'analysis', 'capital', 'risk', 'compliance', 'regulation', 'portfolio', 'bank', 'banker', 'loan', 'credit', 'debit', 'transaction', 'deposit', 'withdrawal', 'interest', 'mortgage', 'payment'],
                 'hr': ['hr', 'human resources', 'talent', 'recruitment', 'recruiting', 'hiring', 'onboarding', 'training', 'development', 'performance', 'compensation', 'benefits', 'employee', 'workforce', 'culture', 'diversity', 'inclusion'],
                 'design': ['design', 'ux', 'ui', 'user experience', 'user interface', 'graphic', 'visual', 'creative', 'art', 'illustrator', 'photoshop', 'sketch', 'figma', 'adobe', 'wireframe', 'prototype', 'accessibility'],
-                'administrative': ['administrative', 'admin', 'assistant', 'clerk', 'receptionist', 'secretary', 'office', 'document', 'filing', 'paperwork', 'correspondence', 'data entry', 'typing', 'word processing', 'spreadsheet', 'scheduling', 'calendar', 'meeting', 'minute taking', 'phone', 'email', 'customer service', 'support', 'clerical', 'organization']
+                'administrative': ['administrative', 'admin', 'assistant', 'clerk', 'receptionist', 'secretary', 'office', 'document', 'filing', 'paperwork', 'correspondence', 'data entry', 'typing', 'word processing', 'spreadsheet', 'scheduling', 'calendar', 'meeting', 'minute taking', 'phone', 'email', 'customer service', 'support', 'clerical', 'organization'],
+                'marketing': ['seo', 'search engine optimization', 'digital marketing', 'google analytics', 
+                'content marketing', 'sem', 'ppc', 'keyword research', 'marketing strategy'],
+                 'communication': [  'communication', 'english', 'verbal ability', 'written communication', 'presentation', 'grammar', 'fluency', 'spoken english'],
+                 'hr': ['human resources', 'hr', 'recruiting', 'talent acquisition', 'employee engagement','training', 'learning and development', 'payroll', 'onboarding', ],
+                 'customer_service': [  'customer service', 'call center', 'bpo', 'voice process', 'client support','service desk', 'telecalling', 'inbound', 'outbound', 'support executive'],
+                 'finance': [ 'accounting', 'finance', 'bookkeeping', 'ledger', 'invoice', 'audit', 'balance sheet', 'tax', 'payable', 'receivable', 'tally', 'ca', 'cpa'],
+                 'administration': [ 'administrative', 'office assistant', 'clerical', 'filing', 'data entry', 'records', 'scheduling', 'calendar', 'microsoft office', 'ms word', 'ms excel'],
             }
             
             # Create a flattened set of all keywords for basic matching
